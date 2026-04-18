@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals = [...(config.externals || []), 'canvas', 'jsdom'];
-    }
-    return config;
-  },
+  serverExternalPackages: ['canvas', 'jsdom', 'pdf-parse'],
 };
 
 module.exports = nextConfig;
